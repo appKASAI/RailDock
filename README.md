@@ -3,7 +3,7 @@
 1. リポジトリをクローン
    
    ```
-   git clone https://github.com/appKASAI/RailDock.git rails_app
+   git clone https://github.com/appKASAI/RailDock.git rails_app/docker
    ```
    
 2. .env作成
