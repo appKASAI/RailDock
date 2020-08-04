@@ -3,7 +3,7 @@
 1. リポジトリをクローン
    
    ```
-   git clone  rails_app
+   git clone https://github.com/appKASAI/RailDock.git rails_app
    ```
    
 2. raildock階層で
