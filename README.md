@@ -76,9 +76,15 @@
 - コンテナ内で
 
   ```bash
+  rails db:create
   rails g scaffold User name:string email:string
   rails db:migrate
-  rails db:create
+  ```
+  
+- 一度再起動する
+  ```bash
+  docker-compose down
+  docker-compose up workspace nginx mysql
   ```
 
 - [ここに](http:/localhost)アクセスし、起動しているか確認
