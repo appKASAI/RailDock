@@ -24,60 +24,6 @@
    docker-compose up workspace nginx mysql
    ```
 
-   ```
-   gem 'dotenv-rails'
-   ```
-
-5. Databese.ymlの編集
-
-   testはコメントアウトした方がいいかも
-
-   ```
-   default: &default
-     adapter: mysql2
-     encoding: utf8
-     pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-     username: <%= ENV.fetch('MYSQL_USER') { 'root' } %>
-     password: <%= ENV.fetch('MYSQL_PASSWORD') { 'password' } %>
-     host: <%= ENV.fetch('MYSQL_HOST') { 'db' } %>
-   
-   development:
-     <<: *default
-     database: default
-   
-   #test:
-   #  <<: *default
-   #  database: webapp_test
-   ```
-
-6. .envに追加
-
-   ```
-   MYSQL_HOST=mysql
-   MYSQL_USER=default
-   MYSQL_PASSWORD=secret
-   ```
-
-   database作成
-
-7. ```
-   rails g scaffold User name:string email:string
-   rails db:migrate
-   ```
-
-   usersにアクセスする
-
-8. ```
-   rails db:create
-   ```
-
-9. 終わるとき
-
-   ```
-   docker-compose down
-   ```
-
-
 
 ## 環境変数とデータベースの設定
 
