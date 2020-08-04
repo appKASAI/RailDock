@@ -2,28 +2,28 @@
 
 1. リポジトリをクローン
    
-   ```
+   ```bash
    git clone https://github.com/appKASAI/RailDock.git rails_app/docker
    ```
    
 2. .env作成
-   ```
+   ```bash
    cp env-example .env
    ```
    必要に応じて編集する
    
 3. raildock階層で
 
-   ```
+   ```bash
    docker-compose build workspace nginx mysql
    ```
 
 4. コンテナを構築、起動
 
-   ```
+   ```bash
    docker-compose up workspace nginx mysql
    ```
-
+   初回はかなり時間かかるのでしばらく待機。
 
 ## 環境変数とデータベースの設定
 
@@ -75,7 +75,7 @@
 
 - コンテナ内で
 
-  ```
+  ```bash
   rails g scaffold User name:string email:string
   rails db:migrate
   rails db:create
@@ -91,15 +91,15 @@
 
 - 始めるとき raildockの階層で
 
-  ```
+  ```bash
   docker-compose up -d workspace nginx mysql
   ```
 
-  たまに時間かかるのですぐにアクセスしてもダメな時がある。
+  少し時間かかるので、すぐにアクセスしてもダメな時がある。
 
 - 終わるとき
 
-  ```
+  ```bash
   docker-compose down
   ```
 
