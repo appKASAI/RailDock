@@ -6,13 +6,19 @@
    git clone https://github.com/appKASAI/RailDock.git rails_app
    ```
    
-2. raildock階層で
+2. .env作成
+   ```
+   cp env-example .env
+   ```
+   必要に応じて編集する
+   
+3. raildock階層で
 
    ```
    docker-compose build workspace nginx mysql
    ```
 
-3. コンテナを構築、起動
+4. コンテナを構築、起動
 
    ```
    docker-compose up workspace nginx mysql
@@ -22,7 +28,7 @@
    gem 'dotenv-rails'
    ```
 
-4. Databese.ymlの編集
+5. Databese.ymlの編集
 
    testはコメントアウトした方がいいかも
 
@@ -44,7 +50,7 @@
    #  database: webapp_test
    ```
 
-5. .envに追加
+6. .envに追加
 
    ```
    MYSQL_HOST=mysql
@@ -54,18 +60,18 @@
 
    database作成
 
-6. ```
+7. ```
    rails g scaffold User name:string email:string
    rails db:migrate
    ```
 
    usersにアクセスする
 
-7. ```
+8. ```
    rails db:create
    ```
 
-8. 終わるとき
+9. 終わるとき
 
    ```
    docker-compose down
